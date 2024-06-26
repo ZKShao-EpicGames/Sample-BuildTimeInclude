@@ -13,8 +13,8 @@ public class BuildTimeIncludeEditorTarget : TargetRules
 		IncludeOrderVersion = EngineIncludeOrderVersion.Latest;
 		ExtraModuleNames.Add("BuildTimeInclude");
 
-        // Override the build environment: this lets us dynamically enable plugins and raise bWarningsAsErrors
-        //bOverrideBuildEnvironment = true;
+        // Use unique build environment: this lets us include plugins at build-time by adding their name to the "EnablePlugins" property.
+        // Requires building the engine from source.
         BuildEnvironment = TargetBuildEnvironment.Unique;
 
         // Whether warnings should cause build failures. Set to true if misconfigured GameFeature plugins should prevent a build.
